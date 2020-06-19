@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AppLoginComponent } from 'src/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppLoginComponent
   ],
   imports: [
     BrowserModule,

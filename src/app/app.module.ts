@@ -7,17 +7,25 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AppLoginComponent } from 'src/login/login.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppLandingModule } from 'src/landing/landing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppLoginComponent
+    AppLoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppLandingModule
 
   ],
   providers: [],

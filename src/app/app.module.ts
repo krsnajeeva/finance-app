@@ -10,12 +10,12 @@ import { AppLoginComponent } from 'src/login/login.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppLandingModule } from 'src/landing/landing.module';
+import { AppLoginModule } from 'src/login/login.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AppLoginComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +25,8 @@ import { AppLandingModule } from 'src/landing/landing.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    AppLoginModule,
     AppLandingModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

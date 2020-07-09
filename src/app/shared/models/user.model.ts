@@ -27,4 +27,25 @@ export class SuperAdmin {
   skypeAccount: any;
   state: any;
   streetName: any;
+  role: any = 'Super Admin';
+}
+
+export class Admin {
+  email: any;
+  age: any;
+  financeId: any;
+  password: any;
+  financeName: any;
+  finNumber: any;
+  adminName: any;
+  adminNickName: any;
+  allocatedAccount: any;
+  financeLogo: any;
+  state: any;
+  district: any;
+  streetName: any;
+  landmark: any;
+  pincode: any;
+  role: any = 'Admin';
+  village: any;
 }

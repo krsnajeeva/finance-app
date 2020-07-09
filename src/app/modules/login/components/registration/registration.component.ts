@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, } from '@angular/core';
 import { LoginService } from '../../login.service';
 import { User, SuperAdmin } from '../../../../shared/models/user.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
+  // tslint:disable-next-line: no-output-native
+  @Output() close = new EventEmitter();
+
   user: User;
   updateData: User;
   superAdmin = new SuperAdmin();
@@ -58,9 +61,12 @@ export class RegistrationComponent implements OnInit {
     };
   }
 
-  create(user: SuperAdmin) {
+  async create(user: SuperAdmin) {
     const request = JSON.stringify(user);
-    this.loginService.registerUser(JSON.parse(request));
+    await this.loginService.registerUser(JSON.parse(request));
+    await this.loginService.SignUp(JSON.parse(request).email, JSON.parse(request).password);
+    this.close.emit({ action: 'Registeration window closed' });
+    alert('Super Admin Account created successfully');
   }
 
   update(user: User) {
@@ -83,6 +89,10 @@ export class RegistrationComponent implements OnInit {
 
       console.log('users FORMAT received is', users);
     });
+  }
+
+  onClose() {
+    this.close.emit({ action: 'Registeration window closed' });
   }
 
 

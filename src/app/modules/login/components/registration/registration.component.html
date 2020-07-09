@@ -1,215 +1,224 @@
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-11 col-sm-10 col-md-10 col-lg-12 col-xl-5 text-center p-0 mt-3 mb-2">
-      <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-        <h4 id="heading">Create Your Finance Account</h4>
-        <form [formGroup]="superAdminForm" id="msform">
-          <!-- progressbar -->
-          <div>
-            <!-- <fieldset> -->
-            <div class="form-card">
-              <div class="row">
-                <div class="col-lg-9">
-                  <h5 class="fs-title">Profile Information</h5>
-                </div>
+<div class="popup-inner">
+  <div class="popup-scroll">
 
-              </div>
-
-              <div class="row registration-border">
-                <div class="form-group">
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Entrepreneur Name: *</label>
-                    <input name="entrepreneurName" formControlName="entrepreneurName"
-                      [(ngModel)]="superAdmin.entrepreneurName" type="email" id="super-admin-name" class="form-control">
-                  </div>
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Profile-Photo: *</label>
-                    <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
-                      capture="">
-                  </div>
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">DOB: *</label>
-                    <input formControlName="dob" [(ngModel)]="superAdmin.dob" type="date" id="super-admin-DOB"
-                      class="form-control">
-                  </div>
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Age: *</label>
-                    <input formControlName="age" [(ngModel)]="superAdmin.age" type="number" id="super-admin-age"
-                      class="form-control">
-                  </div>
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Pan-Card Number: </label>
-                    <input formControlName="panCardNumber" [(ngModel)]="superAdmin.panCardNumber" type="number"
-                      id="super-admin-age" class="form-control">
-                  </div>
-
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Phone Number: *</label>
-                    <input formControlName="phoneNumber" [(ngModel)]="superAdmin.phoneNumber" type="email"
-                      id="per-email" class="form-control">
-                  </div>
-                  <div class="col-sm-12 box-align">
-                    <label class="fieldlabels">Please note that the below mentioned Information are important
-                      to recover this account *</label>
-                  </div>
-                  <div class="col-sm-6 box-align">
-                    <label class="fieldlabels">Enter your Mail ID: *</label>
-                    <input formControlName="email" [(ngModel)]="superAdmin.email" type="email" id="per-email"
-                      class="form-control">
-                  </div>
-                  <div class="col-sm-3 box-align">
-                    <label class="fieldlabels">Password: *</label>
-                    <input formControlName="password" [(ngModel)]="superAdmin.password" type="password" id="password"
-                      class="form-control">
-                  </div>
-                  <div class="col-sm-3 box-align">
-                    <label class="fieldlabels">Confirm Password: *</label>
-                    <input type="password" id="cpassword" class="form-control">
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <input (click)="update(updateData)" type="button" name="Submit" class="next action-button" value="Update" />
-            <input (click)="delete('WWzG0WxLR4VGiDCuDGf6')" type="button" name="Submit" class="next action-button"
-              value="Delete" />
-            <input (click)="create(superAdmin)" type="button" name="Submit" class="next action-button"
-              value="Register" />
-            <input (click)="getUsers()" type="button" name="Submit" class="next action-button" value="Get" />
-            <!-- </fieldset> -->
-          </div>
-
-          <!--  -->
-          <div>
-            <div class="form-card">
-              <div class="row">
-                <div class="col-lg-9">
-                  <h5 class="fs-title">Finance Information</h5>
-                </div>
-
-              </div>
-
-              <div class="row registration-border">
-                <div class="form-group">
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Finance Name: *</label>
-                    <input formControlName="financeName" [(ngModel)]="superAdmin.financeName" type="email"
-                      id="super-admin-name" class="form-control">
-                  </div>
-
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Finance Start Date: *</label>
-                    <input formControlName="financeStartDate" [(ngModel)]="superAdmin.financeStartDate" type="date"
-                      id="super-admin-DOB" class="form-control">
-                  </div>
-
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">No. of Finance: *</label>
-                    <input formControlName="NoOfFinance" [(ngModel)]="superAdmin.NoOfFinance" type="number"
-                      id="number-of-finance" class="form-control">
-                  </div>
-
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Skype Account: </label>
-                    <input formControlName="skypeAccount" [(ngModel)]="superAdmin.skypeAccount" type="text"
-                      id="super-admin-age" class="form-control">
-                  </div>
-
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Finance Number: *</label>
-                    <input formControlName="financeNumber" [(ngModel)]="superAdmin.financeNumber" type="email"
-                      id="per-email" class="form-control">
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-
-            <a class="next action-button validate-OTP btn-primary" value="Next" href="#">Address Info &nbsp;
-              &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-            <a class="previous action-button action-button-previous" value="Previous" href="#"><i
-                class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; &nbsp; Profile Info </a>
-          </div>
-
-          <div>
-            <div class="form-card">
-              <div class="row">
-                <div class="col-lg-9">
-                  <h5 class="fs-title">Finance Address Information</h5>
-                </div>
-
-              </div>
-
-              <div class="row registration-border">
-                <div class="form-group">
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Office Address Proof: *</label>
-                    <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
-                      capture="">
-                  </div>
-                  <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
-                    <label class="fieldlabels">State: *</label>
-                    <div class="sbx" id="yoe_fld">
-                      <select id="sel_val" class="styled align form-control">
-                        <option>- - - - - -</option>
-                        <option>Tamil Nadu</option>
-                        <option>Puducherry</option>
-                        <option>Telangana</option>
-                        <option>Karnataka</option>
-                        <option>Kerala</option>
-                        <option>Andhra Pradesh</option>
-                      </select>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-11 col-sm-10 col-md-10 col-lg-12 col-xl-5 text-center p-0 mt-3 mb-2">
+          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+            <h4 id="heading">Create Your Finance Account</h4>
+            <form [formGroup]="superAdminForm" id="msform">
+              <!-- progressbar -->
+              <div>
+                <!-- <fieldset> -->
+                <div class="form-card">
+                  <div class="row">
+                    <div class="col-lg-9">
+                      <h5 class="fs-title">Profile Information</h5>
                     </div>
-                  </div>
-                  <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
-                    <label class="fieldlabels">District: *</label>
-                    <div class="sbx" id="yoe_fld">
-                      <select id="sel_val" class="styled align form-control">
-                        <option>- - - - - -</option>
-                        <option>Erode</option>
-                        <option>Coimbatore</option>
-                        <option>Salem</option>
-                        <option>Namakkal</option>
-                        <option>Tanjavur</option>
-                        <option>Chennai</option>
-                        <option>Madurai</option>
-                        <option>Tiruchirappally</option>
-                        <option>Dindigul</option>
-                        <option>Nagapattinam</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Street Name: *</label>
-                    <input formControlName="streetName" [(ngModel)]="superAdmin.streetName" type="text" id="Landmark"
-                      class="form-control">
-                  </div>
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Landmark: *</label>
-                    <input formControlName="landmark" [(ngModel)]="superAdmin.landmark" type="text" id="Landmark"
-                      class="form-control">
-                  </div>
-                  <div class="col-sm-4 box-align">
-                    <label class="fieldlabels">Pincode: *</label>
-                    <input formControlName="pincode" [(ngModel)]="superAdmin.pincode" type="number" id="pincode"
-                      class="form-control">
+
                   </div>
 
+                  <div class="row registration-border">
+                    <div class="form-group">
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Entrepreneur Name: *</label>
+                        <input name="entrepreneurName" formControlName="entrepreneurName"
+                          [(ngModel)]="superAdmin.entrepreneurName" type="email" id="super-admin-name"
+                          class="form-control">
+                      </div>
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Profile-Photo: *</label>
+                        <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
+                          capture="">
+                      </div>
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">DOB: *</label>
+                        <input formControlName="dob" [(ngModel)]="superAdmin.dob" type="date" id="super-admin-DOB"
+                          class="form-control">
+                      </div>
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Age: *</label>
+                        <input formControlName="age" [(ngModel)]="superAdmin.age" type="number" id="super-admin-age"
+                          class="form-control">
+                      </div>
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Pan-Card Number: </label>
+                        <input formControlName="panCardNumber" [(ngModel)]="superAdmin.panCardNumber" type="number"
+                          id="super-admin-age" class="form-control">
+                      </div>
+
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Phone Number: *</label>
+                        <input formControlName="phoneNumber" [(ngModel)]="superAdmin.phoneNumber" type="email"
+                          id="per-email" class="form-control">
+                      </div>
+                      <div class="col-sm-12 box-align">
+                        <label class="fieldlabels">Please note that the below mentioned Information are important
+                          to recover this account *</label>
+                      </div>
+                      <div class="col-sm-6 box-align">
+                        <label class="fieldlabels">Enter your Mail ID: *</label>
+                        <input formControlName="email" [(ngModel)]="superAdmin.email" type="email" id="per-email"
+                          class="form-control">
+                      </div>
+                      <div class="col-sm-3 box-align">
+                        <label class="fieldlabels">Password: *</label>
+                        <input formControlName="password" [(ngModel)]="superAdmin.password" type="password"
+                          id="password" class="form-control">
+                      </div>
+                      <div class="col-sm-3 box-align">
+                        <label class="fieldlabels">Confirm Password: *</label>
+                        <input type="password" id="cpassword" class="form-control">
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
 
+                <!-- <input (click)="update(updateData)" type="button" name="Submit" class="next action-button"
+                  value="Update" />
+                <input (click)="delete('WWzG0WxLR4VGiDCuDGf6')" type="button" name="Submit" class="next action-button"
+                  value="Delete" />
+                <input (click)="create(superAdmin)" type="button" name="Submit" class="next action-button"
+                  value="Register" /> -->
+                <!-- <input (click)="getUsers()" type="button" name="Submit" class="next action-button" value="Get" /> -->
+                <!-- </fieldset> -->
               </div>
-            </div>
-            <a class="next action-button validate-OTP btn-primary" value="Next" href="#">Save & Submit &nbsp;
-              &nbsp; <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
-            <a class="previous action-button action-button-previous" value="Previous" href="#"><i
-                class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; &nbsp; Address Info </a>
 
+              <!--  -->
+              <div>
+                <div class="form-card">
+                  <div class="row">
+                    <div class="col-lg-9">
+                      <h5 class="fs-title">Finance Information</h5>
+                    </div>
+
+                  </div>
+
+                  <div class="row registration-border">
+                    <div class="form-group">
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Finance Name: *</label>
+                        <input formControlName="financeName" [(ngModel)]="superAdmin.financeName" type="email"
+                          id="super-admin-name" class="form-control">
+                      </div>
+
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Finance Start Date: *</label>
+                        <input formControlName="financeStartDate" [(ngModel)]="superAdmin.financeStartDate" type="date"
+                          id="super-admin-DOB" class="form-control">
+                      </div>
+
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">No. of Finance: *</label>
+                        <input formControlName="NoOfFinance" [(ngModel)]="superAdmin.NoOfFinance" type="number"
+                          id="number-of-finance" class="form-control">
+                      </div>
+
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Skype Account: </label>
+                        <input formControlName="skypeAccount" [(ngModel)]="superAdmin.skypeAccount" type="text"
+                          id="super-admin-age" class="form-control">
+                      </div>
+
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Finance Number: *</label>
+                        <input formControlName="financeNumber" [(ngModel)]="superAdmin.financeNumber" type="email"
+                          id="per-email" class="form-control">
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- <a class="next action-button validate-OTP btn-primary" value="Next" href="#">Address Info &nbsp;
+                  &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a class="previous action-button action-button-previous" value="Previous" href="#"><i
+                    class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; &nbsp; Profile Info </a> -->
+              </div>
+
+              <div>
+                <div class="form-card">
+                  <div class="row">
+                    <div class="col-lg-9">
+                      <h5 class="fs-title">Finance Address Information</h5>
+                    </div>
+
+                  </div>
+
+                  <div class="row registration-border">
+                    <div class="form-group">
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Office Address Proof: *</label>
+                        <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
+                          capture="">
+                      </div>
+                      <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
+                        <label class="fieldlabels">State: *</label>
+                        <div class="sbx" id="yoe_fld">
+                          <select id="sel_val" class="styled align form-control">
+                            <option>- - - - - -</option>
+                            <option>Tamil Nadu</option>
+                            <option>Puducherry</option>
+                            <option>Telangana</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Andhra Pradesh</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
+                        <label class="fieldlabels">District: *</label>
+                        <div class="sbx" id="yoe_fld">
+                          <select id="sel_val" class="styled align form-control">
+                            <option>- - - - - -</option>
+                            <option>Erode</option>
+                            <option>Coimbatore</option>
+                            <option>Salem</option>
+                            <option>Namakkal</option>
+                            <option>Tanjavur</option>
+                            <option>Chennai</option>
+                            <option>Madurai</option>
+                            <option>Tiruchirappally</option>
+                            <option>Dindigul</option>
+                            <option>Nagapattinam</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Street Name: *</label>
+                        <input formControlName="streetName" [(ngModel)]="superAdmin.streetName" type="text"
+                          id="Landmark" class="form-control">
+                      </div>
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Landmark: *</label>
+                        <input formControlName="landmark" [(ngModel)]="superAdmin.landmark" type="text" id="Landmark"
+                          class="form-control">
+                      </div>
+                      <div class="col-sm-4 box-align">
+                        <label class="fieldlabels">Pincode: *</label>
+                        <input formControlName="pincode" [(ngModel)]="superAdmin.pincode" type="number" id="pincode"
+                          class="form-control">
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+                <a (click)="create(superAdmin)" class="next action-button validate-OTP btn-primary" >Save & Submit &nbsp;
+                  &nbsp; <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                <!-- <a class="previous action-button action-button-previous" value="Previous" href="#"><i
+                    class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; &nbsp; Address Info </a> -->
+
+              </div>
+
+            </form>
           </div>
-
-        </form>
+        </div>
       </div>
     </div>
+
   </div>
+  <a (click)="onClose()" class="popup-close" data-popup-close="popup-1" href="#">x</a>
 </div>

@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
-import { AppLoginComponent } from './login.component';
+import { AppLandingLayoutComponent } from '../landing/components/landing/landing-layout.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppLoginRoutingModule } from './login-routing.module';
+import { AppLandingRoutingModule } from './landing-routing.module';
 
 @NgModule({
     declarations: [
-        AppLoginComponent
+        AppLandingLayoutComponent,
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        AppLoginRoutingModule
+        AppLandingRoutingModule
     ],
     exports: [
-        AppLoginComponent
+        AppLandingLayoutComponent
     ]
 })
-
-export class AppLoginModule { }
+export class AppLandingModule { }

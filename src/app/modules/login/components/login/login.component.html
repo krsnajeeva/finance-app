@@ -1,0 +1,394 @@
+<div id='wrapper'>
+
+  <!--Login Here-->
+  <div class="container-fluid">
+    <div class="row justify-content-center bg-image">
+      <div class="col-4 col-sm-3 col-md-3 col-lg-4 col-xl-5 col-xs-12"></div>
+      <div class="col-4 col-sm-3 col-md-3 col-lg-4 col-xl-5 col-xs-12"></div>
+      <div class="col-4 col-sm-6 col-md-6 col-lg-4 col-xl-5 text-center p-0 mt-3 mb-2">
+        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+
+          <form id="msform">
+            <!-- progressbar -->
+
+            <fieldset>
+              <div class="form-card">
+
+                <div class="row border">
+                  <div class="form-group">
+                    <h4 id="heading">Login Here</h4>
+                    <div class="col-sm-12 box-align">
+                      <label class="fieldlabels">Enter Email-Id: *</label>
+                      <!-- <input type="email" id="mial-id" class="form-control"> -->
+                      <input [ngModelOptions]="{standalone: true}" [(ngModel)]="userEmail" type="email" id="mial-id"
+                        class="form-control">
+                    </div>
+                    <div class="col-sm-12 box-align">
+                      <label class="fieldlabels">Password: *</label>
+                      <input [ngModelOptions]="{standalone: true}" [(ngModel)]="userPassword" type="password"
+                        id="adminname" class="form-control">
+                    </div>
+
+                    <div class="col-sm-12 checkbox switcher">
+                      <label for="test2">
+                        <input type="checkbox" id="test2" value="" checked>
+                        <span><small></small></span>
+                        <small>Remember me</small>
+                      </label>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4  col-xs-4"></div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4  col-xs-4">
+                        <input (click)="onClickLogin()" type="button" name="next" class="login" value="Login" />
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4  col-xs-4"></div>
+
+                    </div>
+
+                    <div class="col-sm-8 box-align">
+                      <label class="fieldlabels">Retrive your account</label>
+                      <a (click)="forgetPassword()" class="btn custom" data-popup-open="popup-2"> Forget Password</a>
+
+                    </div>
+
+                    <!--Field must should come here-->
+                    <hr>
+                    <br><br>
+                    <div class="row">
+                      <div class="col-sm-12 box-align">
+
+                        <a id="myBtn" (click)="createRegister()" data-popup-open="popup-1" class="btn btn-primary">
+                          Create
+                          one</a>
+                        <!-- <a (click)="createRegister()" data-popup-open="popup-1"  class="btn btn-primary"> Create
+                          one</a> -->
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </fieldset>
+
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Popup Starts Here-->
+
+  <div *ngIf="isModalVisible">
+    <app-registration (close)="onRegisterationClose()"></app-registration>
+  </div>
+  <!-- id="myModal" class="popup" data-popup="popup-1" -->
+  <!--New User Signup-->
+  <div *ngIf="false">
+    <div class="popup-inner">
+      <div class="popup-scroll">
+
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-11 col-sm-10 col-md-10 col-lg-12 col-xl-5 text-center p-0 mt-3 mb-2">
+              <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h4 id="heading">Create Your Finance Account</h4>
+                <form id="msform">
+                  <!-- progressbar -->
+
+                  <fieldset>
+                    <div class="form-card">
+                      <div class="row">
+                        <div class="col-lg-9">
+                          <h5 class="fs-title">Profile Information</h5>
+                        </div>
+
+                      </div>
+
+                      <div class="row registration-border">
+                        <div class="form-group">
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Entrepreneur Name: *</label>
+                            <input type="email" id="super-admin-name" class="form-control">
+                          </div>
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Profile-Photo: *</label>
+                            <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
+                              capture="">
+                          </div>
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">DOB: *</label>
+                            <input type="date" id="super-admin-DOB" class="form-control">
+                          </div>
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Age: *</label>
+                            <input type="number" id="super-admin-age" class="form-control">
+                          </div>
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Pan-Card Number: </label>
+                            <input type="number" id="super-admin-age" class="form-control">
+                          </div>
+
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Phone Number: *</label>
+                            <input type="email" id="per-email" class="form-control">
+                          </div>
+                          <div class="col-sm-12 box-align">
+                            <label class="fieldlabels">Please note that the below mentioned Information are important
+                              to recover this account *</label>
+                          </div>
+                          <div class="col-sm-6 box-align">
+                            <label class="fieldlabels">Enter your Mail ID: *</label>
+                            <input type="email" id="per-email" class="form-control">
+                          </div>
+                          <div class="col-sm-3 box-align">
+                            <label class="fieldlabels">Password: *</label>
+                            <input type="password" id="password" class="form-control">
+                          </div>
+                          <div class="col-sm-3 box-align">
+                            <label class="fieldlabels">Confirm Password: *</label>
+                            <input type="password" id="cpassword" class="form-control">
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- <input type="button" name="Submit" class="next action-button" value="Submit" />  -->
+
+                    <a class="next action-button validate-OTP btn-primary" value="Next" href="#">Finance Info &nbsp;
+                      &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="form-card">
+                      <div class="row">
+                        <div class="col-lg-9">
+                          <h5 class="fs-title">Finance Information</h5>
+                        </div>
+
+                      </div>
+
+                      <div class="row registration-border">
+                        <div class="form-group">
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Finance Name: *</label>
+                            <input type="email" id="super-admin-name" class="form-control">
+                          </div>
+
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Finance Start Date: *</label>
+                            <input type="date" id="super-admin-DOB" class="form-control">
+                          </div>
+
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">No. of Finance: *</label>
+                            <input type="number" id="number-of-finance" class="form-control">
+                          </div>
+
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Skype Account: </label>
+                            <input type="text" id="super-admin-age" class="form-control">
+                          </div>
+
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Finance Number: *</label>
+                            <input type="email" id="per-email" class="form-control">
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <a class="next action-button validate-OTP btn-primary" value="Next" href="#">Address Info &nbsp;
+                      &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                    <a class="previous action-button action-button-previous" value="Previous" href="#"><i
+                        class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; &nbsp; Profile Info </a>
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="form-card">
+                      <div class="row">
+                        <div class="col-lg-9">
+                          <h5 class="fs-title">Finance Address Information</h5>
+                        </div>
+
+                      </div>
+
+                      <div class="row registration-border">
+                        <div class="form-group">
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Office Address Proof: *</label>
+                            <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
+                              capture="">
+                          </div>
+                          <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
+                            <label class="fieldlabels">State: *</label>
+                            <div class="sbx" id="yoe_fld">
+                              <select id="sel_val" class="styled align form-control">
+                                <option>- - - - - -</option>
+                                <option>Tamil Nadu</option>
+                                <option>Puducherry</option>
+                                <option>Telangana</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Andhra Pradesh</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
+                            <label class="fieldlabels">District: *</label>
+                            <div class="sbx" id="yoe_fld">
+                              <select id="sel_val" class="styled align form-control">
+                                <option>- - - - - -</option>
+                                <option>Erode</option>
+                                <option>Coimbatore</option>
+                                <option>Salem</option>
+                                <option>Namakkal</option>
+                                <option>Tanjavur</option>
+                                <option>Chennai</option>
+                                <option>Madurai</option>
+                                <option>Tiruchirappally</option>
+                                <option>Dindigul</option>
+                                <option>Nagapattinam</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Street Name: *</label>
+                            <input type="text" id="Landmark" class="form-control">
+                          </div>
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Landmark: *</label>
+                            <input type="text" id="Landmark" class="form-control">
+                          </div>
+                          <div class="col-sm-4 box-align">
+                            <label class="fieldlabels">Pincode: *</label>
+                            <input type="number" id="pincode" class="form-control">
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                    <a class="next action-button validate-OTP btn-primary" value="Next" href="#">Save & Submit &nbsp;
+                      &nbsp; <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                    <a class="previous action-button action-button-previous" value="Previous" href="#"><i
+                        class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; &nbsp; Address Info </a>
+
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="form-card">
+
+                      <h2 class="purple-text text-center"><strong>SUCCESSFULLY !</strong></h2> <br>
+                      <div class="row justify-content-center">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4 "> <img style="width: 30%; margin: 0 auto; display: block;"
+                            src="image/tick-mark.png" class="fit-image"> </div>
+                        <div class="col-lg-4"></div>
+                      </div>
+                      <br><br>
+                      <div class="row justify-content-center">
+                        <div class="col-lg-12 text-center">
+                          <h5 class="purple-text text-center">Your Finance Account Successfully Created.</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+    </div>
+  </div>
+
+  <!--Forget Password-->
+  <!-- <div class="popup" data-popup="popup-2"> -->
+  <div *ngIf="isForgetModalVisible" class="popup-inner">
+    <div class="popup-scroll">
+
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-11 col-sm-10 col-md-10 col-lg-12 col-xl-5 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+              <h4 id="heading">Retrive your Account</h4>
+              <form id="msform">
+                <!-- progressbar -->
+
+                <fieldset>
+                  <div class="form-card">
+                    <div class="row">
+                      <div class="col-lg-9">
+                        <h5 class="fs-title">Retrive by Email</h5>
+                      </div>
+
+                    </div>
+
+                    <div class="row border">
+                      <div class="form-group">
+
+                        <div class="col-sm-12 box-align">
+                          <label class="fieldlabels">Enter your Mail ID: *</label>
+                          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="forgetPasswordMail" type="email" id="adminname" class="form-control">
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <input (click)="sendForgetPasswordMail(forgetPasswordMail)" type="button" name="Submit" class="next action-button" value="Submit" />
+                </fieldset>
+                <fieldset>
+                  <div class="form-card">
+
+                    <h2 class="purple-text text-center"><strong>SUCCESSFULLY !</strong></h2> <br>
+                    <div class="row justify-content-center">
+                      <div class="col-lg-4"></div>
+                      <div class="col-lg-4 "> <img style="width: 30%; margin: 0 auto; display: block;"
+                          src="image/tick-mark.png" class="fit-image"> </div>
+                      <div class="col-lg-4"></div>
+                    </div>
+                    <br><br>
+                    <div class="row justify-content-center">
+                      <div class="col-lg-12 text-center">
+                        <h5 class="purple-text text-center">We sent your Password to your G-mail Account</h5>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p><a data-popup-close="popup-2" href="#">Close</a></p>
+    <a (click)="closeForgetPopUp()" class="popup-close" data-popup-close="popup-2" >x</a>
+  </div>
+  <!--Popup Ends Here-->
+  <div id='page-wrapper'>
+
+
+  </div>
+
+  <!-- </div> -->
+  <section class="trade-mark">
+    <p class="text-center trade-s"> Powered by
+      <span style="font-size: 11pt;"> Dreamwell Technologies</span>
+    </p>
+  </section>
+</div>

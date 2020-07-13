@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AppLoginComponent } from 'src/login/login.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AppLoginComponent } from '../app/modules/login/components/login/login.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppLandingModule } from 'src/landing/landing.module';
-import { AppLoginModule } from 'src/login/login.module';
+import { AppLandingModule } from '../app/modules/landing/landing.module';
+import { AppLoginModule } from '../app/modules/login/login.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AppLoginModule } from 'src/login/login.module';
     FormsModule,
     ReactiveFormsModule,
     AppLoginModule,
-    AppLandingModule
+    AppLandingModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

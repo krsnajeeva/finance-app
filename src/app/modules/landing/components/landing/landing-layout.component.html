@@ -1,0 +1,274 @@
+<p>Landing components works!</p>
+<router-outlet></router-outlet>
+<div id='wrapper'>
+  <nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-hamburger-delicious'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand'>Finance Name <span class="badge green">Demo Plan</span><span class="validity">Validity
+          ends in 3 days</span></a>
+    </div>
+
+    <div class='collapse navbar-collapse navbar-hamburger-delicious'>
+      <ul class='nav navbar-nav side-nav fadeInLeft'>
+
+        <li class='admin'><a href='index.html'><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+        <li class='admin dropdown user-dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i
+                class="fa fa-university" aria-hidden="true"></i>Repledge Loans</span><b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li class='admin'><a href='#settings'>Add Repledge</a></li>
+            <li class='admin'><a href='#settings'>Repledge Loan Summary</a></li>
+          </ul>
+        </li>
+        <li class='admin dropdown user-dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class="fa fa-ban"
+                aria-hidden="true"></i>Ready to Auction</span><b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li class='admin'><a href='#settings'>Auction Loan Summary</a></li>
+          </ul>
+        </li>
+        <li class='admin'><a href='#'><i class="fa fa-book" aria-hidden="true"></i>All Loan Reports</a></li>
+        <li class='admin'><a href='#'><i class="fa fa-info" aria-hidden="true"></i>Add Info</a></li>
+        <li class='admin dropdown user-dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class="fa fa-inr"
+                aria-hidden="true"></i>Expenses</span><b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li class='admin'><a href='#settings'>Expenses Summary</a></li>
+          </ul>
+        </li>
+        <li class='admin'><a href='#'><i class="fa fa-file-text" aria-hidden="true"></i>Transaction History</a></li>
+        <li class='divider'>
+          <hr>
+        </li>
+        <li class='admin'><a href='#personLookup'><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
+        </li>
+        <li class='admin dropdown user-dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i
+                class="fa fa-plus-circle" aria-hidden="true"></i>Add Loan Amount</span><b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li class='admin'><a href='add-loan-amt.html'>Add Loan Amount</a></li>
+            <li class='admin'><a href='loan-amount-summary.html'>Add Loan Summary</a></li>
+          </ul>
+        </li>
+        <li class='admin'><a href='account-setting.html'><i class="fa fa-cog" aria-hidden="true"></i>Account
+            Settings</a></li>
+
+        <li class='admin dropdown user-dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class="fa fa-plus"
+                aria-hidden="true"></i>Admin</span><b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li class='admin'><a href='add-admin.html'>Add Admin</a></li>
+            <li class='admin'><a href='view-admin.html'>View Admin</a></li>
+          </ul>
+        </li>
+
+        <li class='admin dropdown user-dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class="fa fa-plus"
+                aria-hidden="true"></i>Employee</span><b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li class='admin'><a href='add-employee.html'>Add Employee</a></li>
+            <li class='admin'><a href='view-employee.html'>View Employee</a></li>
+          </ul>
+        </li>
+
+        <li class='admin'><a href='#dashboardUpdates'><i class="fa fa-question" aria-hidden="true"></i>Help</a></li>
+        <li class='admin toggle-nav visible-lg visible-md visible-sm'><a><i class='fa fa-lg fa-arrow-left'></i></a>
+        </li>
+      </ul>
+
+
+      <ul class='nav navbar-nav navbar-right navbar-user'>
+        <li><a href='#'>Deposit Amount : <i class="fa fa-inr class" aria-hidden="true"></i>5,00,000</a></li>
+        <li><a href='#'>Available Amount : <i class="fa fa-inr class" aria-hidden="true"></i>3,00,000</a>
+        </li>
+        <li class="bold"><a href='#'>Loan Amount : <i class="fa fa-inr class" aria-hidden="true"></i> 4,000 /gram</a>
+        </li>
+        <li><a href='#'>Loan Date : </a></li>
+        <li><a href='#'>
+            <input type="date" id="cus-id-number" class="form-control" placeholder="RAC1001000001">
+          </a>
+        </li>
+        <li class='dropdown user-dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"> <img src="#"
+                class="image--cover">Samy</span><b class='caret'></b></a>
+          <ul class='dropdown-menu'>
+            <li class='settings'><a href='#settings'><i class="fa fa-sign-out" aria-hidden="true"></i>
+                Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <!--  -->
+  <div id='page-wrapper'>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-5 text-center p-0 mt-3 mb-2"></div>
+        <div class="col-8 col-sm-10 col-md-10 col-lg-8 col-xl-5 text-center p-0 mt-3 mb-2">
+          <div class="container-fluid">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+              <h4 id="heading">Admin Registeration</h4>
+              <form [formGroup]="adminForm" id="msform">
+                <fieldset>
+                  <div class="form-card">
+                    <div class="row">
+                      <div class="col-lg-9">
+                        <h4 class="fs-title">ADD Admin Details</h4>
+                      </div>
+
+                    </div>
+
+                    <div class="row border">
+                      <div class="form-group">
+
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Enter E-mail ID: *</label>
+                          <input formControlName="email" [(ngModel)]="admin.email" type="email" id="adminname"
+                            class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Finance ID: *</label>
+                          <input formControlName="financeId" [(ngModel)]="admin.financeId" type="number" id="adminname"
+                            class="form-control" placeholder="1011">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Password: *</label>
+                          <input formControlName="password" [(ngModel)]="admin.password" type="password" id="password"
+                            class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Confirm Password: *</label>
+                          <input type="password" id="cpassword" class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Finance Name: *</label>
+                          <input formControlName="financeName" [(ngModel)]="admin.financeName" type="text" id="fin-name"
+                            class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels" title="This Finance Number will come overall process">Fin Number:
+                            *</label>
+                          <input formControlName="finNumber" [(ngModel)]="admin.finNumber" type="number" id="fin-number"
+                            class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Admin Name: *</label>
+                          <input formControlName="adminName" [(ngModel)]="admin.adminName" type="text" id="fin-adm-name"
+                            class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Admin Nick Name: *</label>
+                          <input formControlName="adminNickName" [(ngModel)]="admin.adminNickName" type="text"
+                            id="fin-adm-name" class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Allocated Amount: *</label>
+                          <input formControlName="allocatedAccount" [(ngModel)]="admin.allocatedAccount" type="number"
+                            id="fin-alloct-amt" class="form-control">
+                        </div>
+                        <div class="col-sm-6 box-align">
+                          <label class="fieldlabels">Finance Logo: </label>
+                          <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
+                            capture>
+                        </div>
+                        <div class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 fieldlabels box-align">
+                          <h4 class="fieldlabels head2">Address Details:</h4>
+                        </div>
+                        <div class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                          <label class="fieldlabels">State: *</label>
+                          <div class="sbx" id="yoe_fld">
+                            <select id="sel_val" class="styled align form-control">
+                              <option>- - - - - -</option>
+                              <option>Tamil Nadu</option>
+                              <option>Puducherry</option>
+                              <option>Telangana</option>
+                              <option>Karnataka</option>
+                              <option>Kerala</option>
+                              <option>Andhra Pradesh</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                          <label class="fieldlabels">District: *</label>
+                          <div class="sbx" id="yoe_fld">
+                            <select id="sel_val" class="styled align form-control">
+                              <option>- - - - - -</option>
+                              <option>Erode</option>
+                              <option>Coimbatore</option>
+                              <option>Salem</option>
+                              <option>Namakkal</option>
+                              <option>Tanjavur</option>
+                              <option>Chennai</option>
+                              <option>Madurai</option>
+                              <option>Tiruchirappally</option>
+                              <option>Dindigul</option>
+                              <option>Nagapattinam</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                          <label class="fieldlabels">Village/Town: </label>
+                          <input formControlName="village" [(ngModel)]="admin.village" type="text" id="street-name"
+                            class="form-control">
+                        </div>
+                        <div class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                          <label class="fieldlabels">Street Name: *</label>
+                          <input formControlName="streetName" [(ngModel)]="admin.streetName" type="text"
+                            id="street-name" class="form-control">
+                        </div>
+                        <div class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                          <label class="fieldlabels">Landmark: *</label>
+                          <input formControlName="landmark" [(ngModel)]="admin.landmark" type="text" id="landmark"
+                            class="form-control">
+                        </div>
+                        <div class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                          <label class="fieldlabels">Pin Code: *</label>
+                          <input formControlName="pincode" [(ngModel)]="admin.pincode" type="number" id="pin-number"
+                            class="form-control">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <a (click)="createAdmin(admin)" class="next action-button validate-OTP btn-primary"  > Submit &nbsp;
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                </fieldset>
+
+                <fieldset>
+                  <div class="form-card">
+                    <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                    <div class="justify-content-center">
+                      <div class="col-2 col-sm-12 col-md-2 col-lg-3 col-xl-3"></div>
+                      <div class="col-8 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                        <img style="width: 30%; margin: 0 auto; display: block;" src="image/tick-mark.png"
+                          class="fit-image">
+                        <h4 class="purple-text text-center">Admin Account Successfully Created</h4>
+                        <div class="col-md-2 col-lg-12 col-xl-12"></div>
+
+                        <div class="col-2 col-sm-12 col-md-2 col-lg-3 col-xl-3"></div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <section class="trade-mark">
+    <p class="text-center trade-s"> Powered by
+      <span style="font-size: 11pt;"> Dreamwell Technologies</span>
+    </p>
+  </section>
+</div>

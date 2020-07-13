@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap3/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -56,8 +57,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "20kb",
+                  "maximumError": "20kb"
                 }
               ]
             }

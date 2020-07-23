@@ -6,7 +6,7 @@
         <div class="col-11 col-sm-10 col-md-10 col-lg-12 col-xl-5 text-center p-0 mt-3 mb-2">
           <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
             <h4 id="heading">Create Your Finance Account</h4>
-            <form [formGroup]="superAdminForm" id="msform">
+            <form [formGroup]="superAdminForm" id="msform" novalidate>
               <!-- progressbar -->
               <div>
                 <!-- <fieldset> -->
@@ -24,8 +24,24 @@
                         <label class="fieldlabels">Entrepreneur Name: *</label>
                         <input name="entrepreneurName" formControlName="entrepreneurName"
                           [(ngModel)]="superAdmin.entrepreneurName" type="email" id="super-admin-name"
-                          class="form-control">
+                          class="form-control" required>
+                        <span style="color:red"
+                          *ngIf="superAdminForm.get('entrepreneurName').invalid && (superAdminForm.get('entrepreneurName').dirty || superAdminForm.get('entrepreneurName').touched)">
+                          <span *ngIf="superAdminForm.get('entrepreneurName').errors.required">Entrepreneur Name is
+                            required.</span>
+                        </span>
+
+                        <!-- <div
+                          *ngIf="superAdminForm.get('entrepreneurName').invalid && (superAdminForm.get('entrepreneurName').dirty || superAdminForm.get('entrepreneurName').touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="superAdminForm.get('entrepreneurName').errors.required">
+                            Name is required.
+                          </div>
+                        </div> -->
                       </div>
+
+
+
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">Profile-Photo: *</label>
                         <input id="imageUpload" class="form-control" type="file" name="profile_photo" required=""
@@ -35,11 +51,21 @@
                         <label class="fieldlabels">DOB: *</label>
                         <input formControlName="dob" [(ngModel)]="superAdmin.dob" type="date" id="super-admin-DOB"
                           class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('dob').invalid && (superAdminForm.get('dob').dirty || superAdminForm.get('dob').touched)">
+                          <span *ngIf="superAdminForm.get('dob').errors.required">DOB is
+                            required.</span>
+                        </span>
                       </div>
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">Age: *</label>
                         <input formControlName="age" [(ngModel)]="superAdmin.age" type="number" id="super-admin-age"
                           class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('age').invalid && (superAdminForm.get('age').dirty || superAdminForm.get('age').touched)">
+                          <span *ngIf="superAdminForm.get('age').errors.required">Age is
+                            required.</span>
+                        </span>
                       </div>
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">Pan-Card Number: </label>
@@ -51,21 +77,40 @@
                         <label class="fieldlabels">Phone Number: *</label>
                         <input formControlName="phoneNumber" [(ngModel)]="superAdmin.phoneNumber" type="email"
                           id="per-email" class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('phoneNumber').invalid && (superAdminForm.get('phoneNumber').dirty || superAdminForm.get('phoneNumber').touched)">
+                          <span *ngIf="superAdminForm.get('phoneNumber').errors.required">Phone Number is
+                            required.</span>
+                        </span>
                       </div>
+
                       <div class="col-sm-12 box-align">
                         <label class="fieldlabels">Please note that the below mentioned Information are important
                           to recover this account *</label>
                       </div>
+
                       <div class="col-sm-6 box-align">
                         <label class="fieldlabels">Enter your Mail ID: *</label>
                         <input formControlName="email" [(ngModel)]="superAdmin.email" type="email" id="per-email"
                           class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('email').invalid && (superAdminForm.get('email').dirty || superAdminForm.get('email').touched)">
+                          <span *ngIf="superAdminForm.get('email').errors.required">EmailId is
+                            required.</span>
+                        </span>
                       </div>
+
                       <div class="col-sm-3 box-align">
                         <label class="fieldlabels">Password: *</label>
                         <input formControlName="password" [(ngModel)]="superAdmin.password" type="password"
                           id="password" class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('password').invalid && (superAdminForm.get('password').dirty || superAdminForm.get('password').touched)">
+                          <span *ngIf="superAdminForm.get('password').errors.required">Password is
+                            required.</span>
+                        </span>
                       </div>
+
                       <div class="col-sm-3 box-align">
                         <label class="fieldlabels">Confirm Password: *</label>
                         <input type="password" id="cpassword" class="form-control">
@@ -101,18 +146,33 @@
                         <label class="fieldlabels">Finance Name: *</label>
                         <input formControlName="financeName" [(ngModel)]="superAdmin.financeName" type="email"
                           id="super-admin-name" class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('financeName').invalid && (superAdminForm.get('financeName').dirty || superAdminForm.get('financeName').touched)">
+                          <span *ngIf="superAdminForm.get('financeName').errors.required">Finance Name is
+                            required.</span>
+                        </span>
                       </div>
 
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">Finance Start Date: *</label>
                         <input formControlName="financeStartDate" [(ngModel)]="superAdmin.financeStartDate" type="date"
                           id="super-admin-DOB" class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('financeStartDate').invalid && (superAdminForm.get('financeStartDate').dirty || superAdminForm.get('financeStartDate').touched)">
+                          <span *ngIf="superAdminForm.get('financeStartDate').errors.required">Finance Start Date is
+                            required.</span>
+                        </span>
                       </div>
 
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">No. of Finance: *</label>
                         <input formControlName="NoOfFinance" [(ngModel)]="superAdmin.NoOfFinance" type="number"
                           id="number-of-finance" class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('NoOfFinance').invalid && (superAdminForm.get('NoOfFinance').dirty || superAdminForm.get('NoOfFinance').touched)">
+                          <span *ngIf="superAdminForm.get('NoOfFinance').errors.required">No of Finance is
+                            required.</span>
+                        </span>
                       </div>
 
                       <div class="col-sm-4 box-align">
@@ -125,6 +185,11 @@
                         <label class="fieldlabels">Finance Number: *</label>
                         <input formControlName="financeNumber" [(ngModel)]="superAdmin.financeNumber" type="email"
                           id="per-email" class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('financeNumber').invalid && (superAdminForm.get('financeNumber').dirty || superAdminForm.get('financeNumber').touched)">
+                          <span *ngIf="superAdminForm.get('financeNumber').errors.required">No of Finance is
+                            required.</span>
+                        </span>
                       </div>
 
                     </div>
@@ -157,7 +222,7 @@
                       <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
                         <label class="fieldlabels">State: *</label>
                         <div class="sbx" id="yoe_fld">
-                          <select id="sel_val" class="styled align form-control">
+                          <select id="sel_val" class="styled align form-control" required>
                             <option>- - - - - -</option>
                             <option>Tamil Nadu</option>
                             <option>Puducherry</option>
@@ -171,7 +236,7 @@
                       <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
                         <label class="fieldlabels">District: *</label>
                         <div class="sbx" id="yoe_fld">
-                          <select id="sel_val" class="styled align form-control">
+                          <select id="sel_val" class="styled align form-control" required>
                             <option>- - - - - -</option>
                             <option>Erode</option>
                             <option>Coimbatore</option>
@@ -190,23 +255,38 @@
                         <label class="fieldlabels">Street Name: *</label>
                         <input formControlName="streetName" [(ngModel)]="superAdmin.streetName" type="text"
                           id="Landmark" class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('streetName').invalid && (superAdminForm.get('streetName').dirty || superAdminForm.get('streetName').touched)">
+                          <span *ngIf="superAdminForm.get('streetName').errors.required">No of Finance is
+                            required.</span>
+                        </span>
                       </div>
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">Landmark: *</label>
                         <input formControlName="landmark" [(ngModel)]="superAdmin.landmark" type="text" id="Landmark"
                           class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('landmark').invalid && (superAdminForm.get('landmark').dirty || superAdminForm.get('landmark').touched)">
+                          <span *ngIf="superAdminForm.get('landmark').errors.required">No of Finance is
+                            required.</span>
+                        </span>
                       </div>
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">Pincode: *</label>
                         <input formControlName="pincode" [(ngModel)]="superAdmin.pincode" type="number" id="pincode"
                           class="form-control">
+                          <span style="color:red"
+                          *ngIf="superAdminForm.get('pincode').invalid && (superAdminForm.get('pincode').dirty || superAdminForm.get('pincode').touched)">
+                          <span *ngIf="superAdminForm.get('pincode').errors.required">No of Finance is
+                            required.</span>
+                        </span>
                       </div>
 
                     </div>
 
                   </div>
                 </div>
-                <a (click)="create(superAdmin)" class="next action-button validate-OTP btn-primary" >Save & Submit &nbsp;
+                <a (click)="create(superAdmin)" class="next action-button validate-OTP btn-primary">Save & Submit &nbsp;
                   &nbsp; <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
                 <!-- <a class="previous action-button action-button-previous" value="Previous" href="#"><i
                     class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; &nbsp; Address Info </a> -->

@@ -18,32 +18,37 @@ export class AppLandingLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.adminForm = this.formBuilder.group({
-      email: [null],
-      age: [null],
-      financeId: [null],
-      password: [null],
-      financeName: [null],
-      finNumber: [null],
-      adminName: [null],
-      adminNickName: [null],
-      allocatedAccount: [null],
-      financeLogo: [null],
-      state: [null],
-      district: [null],
-      streetName: [null],
-      landmark: [null],
-      pincode: [null],
-      village: [null]
-
+      email: [null, Validators.compose([Validators.required])],
+      age: [null, Validators.compose([Validators.required])],
+      financeId: [null, Validators.compose([Validators.required])],
+      password: [null, Validators.compose([Validators.required])],
+      financeName: [null, Validators.compose([Validators.required])],
+      finNumber: [null, Validators.compose([Validators.required])],
+      adminName: [null, Validators.compose([Validators.required])],
+      adminNickName: [null, Validators.compose([Validators.required])],
+      allocatedAccount: [null, Validators.compose([Validators.required])],
+      financeLogo: [null, Validators.compose([Validators.required])],
+      state: [null, Validators.compose([Validators.required])],
+      district: [null, Validators.compose([Validators.required])],
+      streetName: [null, Validators.compose([Validators.required])],
+      landmark: [null, Validators.compose([Validators.required])],
+      pincode: [null, Validators.compose([Validators.required])],
+      village: [null, Validators.compose([Validators.required])],
     });
   }
 
   createAdmin(user: Admin) {
+    if(this.adminForm.valid){
     const request = JSON.stringify(user);
     console.log('JSON.parse(request) is', JSON.parse(request));
     this.loginService.registerUser(JSON.parse(request));
     alert('Admin Account created successfully');
   }
+  else{
+    alert('Please enter a valid data')
+  }
+}
+
 }
 
 

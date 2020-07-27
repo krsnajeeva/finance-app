@@ -21,6 +21,8 @@ export class AppLoginComponent {
   constructor(private loginService: LoginService, private _ROUTER: Router) { }
 
   onClickLogin() {
+   console.log('come');
+   
     this.loginService.getUser().subscribe(async data => {
       console.log('users received is', data);
       const users = data.map(e => {
@@ -48,6 +50,8 @@ export class AppLoginComponent {
         this._ROUTER.navigate(['/landing']);
 
       } else {
+        console.log('empty');
+        
         alert('Please check your credentials');
       }
 

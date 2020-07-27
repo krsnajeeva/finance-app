@@ -3,16 +3,18 @@ import { AppLandingLayoutComponent } from '../landing/components/landing/landing
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppLandingRoutingModule } from './landing-routing.module';
+import { FinanceAppSharedModule } from 'src/app/shared/shared-module.module';
 
 @NgModule({
     declarations: [
-        AppLandingLayoutComponent,
+        AppLandingLayoutComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        AppLandingRoutingModule
+        AppLandingRoutingModule,
+        FinanceAppSharedModule
     ],
     exports: [
         AppLandingLayoutComponent

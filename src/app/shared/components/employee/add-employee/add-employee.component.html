@@ -1,0 +1,423 @@
+<div id='wrapper'>
+    <!--  -->
+    <div id='page-wrapper'>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-5 text-center p-0 mt-3 mb-2"></div>
+                <div class="col-8 col-sm-10 col-md-10 col-lg-10 col-xl-5 text-center p-0 mt-3 mb-2">
+                    <div class="container-fluid">
+
+                        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                            <h4 id="heading">Employee Registration</h4>
+                            <form [formGroup]="employeeForm" id="msform">
+                                <!-- progressbar -->
+
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-lg-9">
+                                                <h4 class="fs-title">ADD Employee Details</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="row border">
+                                            <div class="form-group">
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Select Finance: *</label>
+                                                    <div class="sbx" id="yoe_fld">
+                                                        <select formControlName="finance" [(ngModel)]="employee.finance"
+                                                            id="sel_val" class="styled align form-control" required>
+                                                            <option>- - - - - -</option>
+                                                            <option>Ragavendra Finance</option>
+                                                            <option>Ragavendra Finance2</option>
+                                                            <option>Ragavendra Finance3</option>
+                                                            <option>Custom</option>
+                                                        </select>
+                                                        <span style="color:red"
+                                                            *ngIf="employeeForm.get('finance').invalid && (employeeForm.get('finance').dirty || employeeForm.get('finance').touched)">
+                                                            <span
+                                                                *ngIf="employeeForm.get('finance').errors.required">Finance
+                                                                required.
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Finance Code: *</label>
+                                                    <input formControlName="financeCode"
+                                                        [(ngModel)]="employee.financeCode" type="number" id="fin-code"
+                                                        class="form-control" placeholder="1001" required>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('financeCode').invalid && (employeeForm.get('financeCode').dirty || employeeForm.get('financeCode').touched)">
+                                                        <span
+                                                            *ngIf="employeeForm.get('financeCode').errors.required">Finance
+                                                            Code is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Date of Joining: *</label>
+                                                    <input formControlName="dateOfJoining"
+                                                        [(ngModel)]="employee.dateOfJoining" type="date" id="emp-name"
+                                                        class="form-control" required>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('dateOfJoining').invalid && (employeeForm.get('dateOfJoining').dirty || employeeForm.get('dateOfJoining').touched)">
+                                                        <span
+                                                            *ngIf="employeeForm.get('dateOfJoining').errors.required">Date of Joining is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Employee Name: *</label>
+                                                    <input formControlName="empName" [(ngModel)]="employee.empName"
+                                                        type="text" id="emp-name" class="form-control" required>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('empName').invalid && (employeeForm.get('empName').dirty || employeeForm.get('empName').touched)">
+                                                        <span
+                                                            *ngIf="employeeForm.get('empName').errors.required">Employee Name is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Employee Nick Name: *</label>
+                                                    <input formControlName="empNickName"
+                                                        [(ngModel)]="employee.empNickName" type="text"
+                                                        id="emp-nick-name" class="form-control" required>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('empNickName').invalid && (employeeForm.get('empNickName').dirty || employeeForm.get('empNickName').touched)">
+                                                        <span
+                                                            *ngIf="employeeForm.get('empNickName').errors.required">Employee Nick Name is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Mobile Number: *</label>
+                                                    <input formControlName="mobileNumber"
+                                                        [(ngModel)]="employee.mobileNumber" type="number" id="adminname"
+                                                        class="form-control" minlength="10" required>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('mobileNumber').invalid && (employeeForm.get('mobileNumber').dirty || employeeForm.get('mobileNumber').touched)">
+                                                        <span
+                                                            *ngIf="employeeForm.get('mobileNumber').errors.required">Mobile Number is
+                                                            required.
+                                                        </span>
+                                                        <span
+                                                        *ngIf="employeeForm.get('mobileNumber').errors.pattern">Enter Valid Mobile Number
+                                                    </span>
+                                                    </span>
+                                                </div>
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Employee DOB: *</label>
+                                                    <input formControlName="empDob" [(ngModel)]="employee.empDob"
+                                                        type="date" id="emp-email-id" class="form-control" required>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('empDob').invalid && (employeeForm.get('empDob').dirty || employeeForm.get('empDob').touched)">
+                                                        <span *ngIf="employeeForm.get('empDob').errors.required">Employee DOB is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Age: *</label>
+                                                    <input formControlName="age" [(ngModel)]="employee.age" type="number"
+                                                        id="emp-age" class="form-control" placeholder="21" required>
+
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('age').invalid && (employeeForm.get('age').dirty || employeeForm.get('age').touched)">
+                                                        <span *ngIf="employeeForm.get('age').errors.required">Age is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels" title="Address Proof">Gender: </label>
+                                                    <div class="sbx" id="yoe_fld">
+                                                        <select formControlName="gender" [(ngModel)]="employee.gender"
+                                                            id="sel_val" class="styled align form-control" required>
+                                                            <option>- - - - - -</option>
+                                                            <option>Male</option>
+                                                            <option>Female</option>
+                                                        </select>
+                                                        <span style="color:red"
+                                                            *ngIf="employeeForm.get('gender').invalid && (employeeForm.get('gender').dirty || employeeForm.get('gender').touched)">
+                                                            <span
+                                                                *ngIf="employeeForm.get('gender').errors.required">Gender is
+                                                                required.
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels" title="Address Proof">Addr. Proof:
+                                                    </label>
+                                                    <div class="sbx" id="yoe_fld">
+                                                        <select formControlName="addressProof"
+                                                            [(ngModel)]="employee.addressProof" id="sel_val"
+                                                            class="styled align form-control" required>
+                                                            <option>- - - - - -</option>
+                                                            <option>Aadhaar Card</option>
+                                                            <option>Driving license</option>
+                                                            <option>Ration card</option>
+                                                            <option>Voter ID (EPIC)</option>
+                                                            <option>Indian passport</option>
+                                                            <option>Gas Connection Bill</option>
+                                                            <option>Others</option>
+                                                        </select>
+                                                        <span style="color:red"
+                                                            *ngIf="employeeForm.get('addressProof').invalid && (employeeForm.get('addressProof').dirty || employeeForm.get('addressProof').touched)">
+                                                            <span
+                                                                *ngIf="employeeForm.get('addressProof').errors.required">Addr. Proof is
+                                                                required.
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels">Id Proof No. : </label>
+                                                    <input formControlName="idProofNo" [(ngModel)]="employee.idProofNo"
+                                                        type="number" id="cus-id-number" class="form-control" required>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('idProofNo').invalid && (employeeForm.get('idProofNo').dirty || employeeForm.get('idProofNo').touched)">
+                                                        <span
+                                                            *ngIf="employeeForm.get('idProofNo').errors.required">Id Proof No is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 box-align">
+                                                <label class="fieldlabels">Basic Salary: *</label>
+                                                <input formControlName="basicSalary" [(ngModel)]="employee.basicSalary"
+                                                    type="number" id="cpassword" class="form-control"
+                                                    placeholder="7000" required>
+                                                <span style="color:red"
+                                                    *ngIf="employeeForm.get('basicSalary').invalid && (employeeForm.get('basicSalary').dirty || employeeForm.get('basicSalary').touched)">
+                                                    <span
+                                                        *ngIf="employeeForm.get('basicSalary').errors.required">Basic Salary is
+                                                        required.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  fieldlabels box-align">
+                                                <p><b>*Note</b> Required below fields are important for signin.</p>
+                                            </div>
+
+                                            <div class="col-sm-6 box-align">
+                                                <label class="fieldlabels">Registred E-mail ID: *</label>
+                                                <input formControlName="regEmailAddress"
+                                                    [(ngModel)]="employee.regEmailAddress" type="email"
+                                                    id="emp-email-id" class="form-control" required>
+                                                <span style="color:red"
+                                                    *ngIf="employeeForm.get('regEmailAddress').invalid && (employeeForm.get('regEmailAddress').dirty || employeeForm.get('regEmailAddress').touched)">
+                                                    <span
+                                                        *ngIf="employeeForm.get('regEmailAddress').errors.required">Registred E-mail ID is
+                                                        required.
+                                                    </span>
+                                                    <span
+                                                    *ngIf="employeeForm.get('regEmailAddress').errors.pattern">Enter a valid E-mail ID
+                                                </span>
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-6 box-align">
+                                                <label class="fieldlabels">Password: *</label>
+                                                <input formControlName="password" [(ngModel)]="employee.password"
+                                                    type="password" id="password" class="form-control"  required>
+                                                <span style="color:red"
+                                                    *ngIf="employeeForm.get('password').invalid && (employeeForm.get('password').dirty || employeeForm.get('password').touched)">
+                                                    <span *ngIf="employeeForm.get('password').errors.required">Password is
+                                                        required.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-6 box-align">
+                                                <label class="fieldlabels">Confirm Password: *</label>
+                                                <input formControlName="confirmPassword" type="password" id="cpassword"
+                                                    class="form-control"  required>
+                                                    <span style="color:red"
+                                                    *ngIf="employeeForm.get('confirmPassword').invalid && (employeeForm.get('confirmPassword').dirty || employeeForm.get('confirmPassword').touched)">
+                                                    <span *ngIf="employeeForm.get('confirmPassword').errors.required">Confirm Password is
+                                                        required.
+                                                    </span>
+                                                    <span *ngIf="employeeForm.get('confirmPassword').errors.ConfirmPasswordValidator">
+                                                        Passsword and Confirm Password didn't match.
+                                                    </span>
+                                                </span>
+                                               
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 fieldlabels box-align">
+                                                <h3 class="fieldlabels head2">Address Details:</h3>
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                <label class="fieldlabels">State: *</label>
+                                                <div class="sbx" id="yoe_fld">
+                                                    <select formControlName="state" [(ngModel)]="employee.state"
+                                                        id="sel_val" class="styled align form-control" required>
+                                                        <option>- - - - - -</option>
+                                                        <option>Tamil Nadu</option>
+                                                        <option>Puducherry</option>
+                                                        <option>Telangana</option>
+                                                        <option>Karnataka</option>
+                                                        <option>Kerala</option>
+                                                        <option>Andhra Pradesh</option>
+                                                    </select>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('state').invalid && (employeeForm.get('state').dirty || employeeForm.get('state').touched)">
+                                                        <span *ngIf="employeeForm.get('state').errors.required">State is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                <label class="fieldlabels">District: *</label>
+                                                <div class="sbx" id="yoe_fld">
+                                                    <select formControlName="district" [(ngModel)]="employee.district"
+                                                        id="sel_val" class="styled align form-control" required>
+                                                        <option>- - - - - -</option>
+                                                        <option>Erode</option>
+                                                        <option>Coimbatore</option>
+                                                        <option>Salem</option>
+                                                        <option>Namakkal</option>
+                                                        <option>Tanjavur</option>
+                                                        <option>Chennai</option>
+                                                        <option>Madurai</option>
+                                                        <option>Tiruchirappally</option>
+                                                        <option>Dindigul</option>
+                                                        <option>Nagapattinam</option>
+                                                    </select>
+                                                    <span style="color:red"
+                                                        *ngIf="employeeForm.get('district').invalid && (employeeForm.get('district').dirty || employeeForm.get('district').touched)">
+                                                        <span
+                                                            *ngIf="employeeForm.get('district').errors.required">District is
+                                                            required.
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                <label class="fieldlabels">Village/Town: </label>
+                                                <input formControlName="village" [(ngModel)]="employee.village"
+                                                    type="text" id="street-name" class="form-control" required>
+                                                <span style="color:red"
+                                                    *ngIf="employeeForm.get('village').invalid && (employeeForm.get('village').dirty || employeeForm.get('village').touched)">
+                                                    <span *ngIf="employeeForm.get('village').errors.required">Village is
+                                                        required.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                <label class="fieldlabels">Street Name: *</label>
+                                                <input formControlName="streetName" [(ngModel)]="employee.streetName"
+                                                    type="text" id="street-name" class="form-control" required>
+                                                <span style="color:red"
+                                                    *ngIf="employeeForm.get('streetName').invalid && (employeeForm.get('streetName').dirty || employeeForm.get('streetName').touched)">
+                                                    <span *ngIf="employeeForm.get('streetName').errors.required">Street Name is
+                                                        required.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                <label class="fieldlabels">Landmark: *</label>
+                                                <input formControlName="landmark" [(ngModel)]="employee.landmark"
+                                                    type="text" id="landmark" class="form-control" required>
+                                                <span style="color:red"
+                                                    *ngIf="employeeForm.get('landmark').invalid && (employeeForm.get('landmark').dirty || employeeForm.get('landmark').touched)">
+                                                    <span *ngIf="employeeForm.get('landmark').errors.required">Landmark is
+                                                        required.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                <label class="fieldlabels">Pin Code: *</label>
+                                                <input formControlName="pinCode" [(ngModel)]="employee.pinCode"
+                                                    type="number" id="pin-number" class="form-control" required>
+                                                <span style="color:red"
+                                                    *ngIf="employeeForm.get('pinCode').invalid && (employeeForm.get('pinCode').dirty || employeeForm.get('pinCode').touched)">
+                                                    <span *ngIf="employeeForm.get('pinCode').errors.required">Pin Code is
+                                                        required.
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a (click)="createEmployee(employee)"
+                                        class="next action-button validate-OTP btn-primary"><i
+                                            class="fa fa-check-square-o pd-rt" aria-hidden="true"></i>Submit </a>
+                                </fieldset>
+
+                                <!-- <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <h4 class="fs-title">Confirm Password:</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row border">
+                                        <div class="row row-set">
+                                            <div class="form-group">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <a (click)="createEmployee(employee)" class="next action-button validate-OTP btn-primary"><i
+                                        class="fa fa-check-square-o pd-rt" aria-hidden="true"></i>Submit </a>
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+
+                                    <h2 class="purple-text text-center"><strong>SUCCESSFULLY !</strong></h2> <br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-4 "> <img style="width: 30%; margin: 0 auto; display: block;"
+                                                src="image/tick-mark.png" class="fit-image"> </div>
+                                        <div class="col-lg-4"></div>
+                                    </div>
+                                    <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-4"></div>
+                                        <div class="col-lg-4 text-center">
+                                            <h5 class="purple-text text-center">Now you are ready to Login</h5>
+                                            <h5 class="purple-text text-center">Welcome to Finance Application.</h5>
+                                        </div>
+                                        <div class="col-lg-4"></div>
+                                    </div>
+                                </div>
+                            </fieldset> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-5 text-center p-0 mt-3 mb-2"></div>
+            </div>
+
+
+        </div>
+
+        <section class="trade-mark">
+            <p class="text-center trade-s"> Powered by
+                <span style="font-size: 11pt;"> Dreamwell Technologies</span>
+            </p>
+        </section>
+
+    </div>
+</div>

@@ -60,7 +60,6 @@ export class AppLoginComponent {
 
   createRegister() {
     this.isModalVisible = true;
-
   }
 
   onRegisterationClose() {

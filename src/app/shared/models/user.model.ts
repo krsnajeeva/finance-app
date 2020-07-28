@@ -31,6 +31,7 @@ export class SuperAdmin {
 }
 
 export class Admin {
+  id: string;
   email: any;
   age: any;
   financeId: any;
@@ -48,4 +49,29 @@ export class Admin {
   pincode: any;
   role: any = 'Admin';
   village: any;
+}
+
+export class Employee {
+  id: string;
+  finance: any;
+  financeCode: any;
+  dateOfJoining: any;
+  empName: any;
+  empNickName: any;
+  mobileNumber: any;
+  empDob: any;
+  age: any;
+  gender: any;
+  addressProof: any;
+  idProofNo: any;
+  basicSalary: any;
+  regEmailAddress: any;
+  password: any;
+  state: any;
+  district: any;
+  village: any;
+  streetName: any;
+  landmark: any;
+  pinCode: any;
+  role: any = 'Employee';
 }

@@ -1,0 +1,189 @@
+<div id='wrapper'>
+
+    <div id='page-wrapper'>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-10 col-md-10 col-sm-10">
+            <h2>View Admin's</h2>
+
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2">
+            <a class="next action-button validate-OTP btn-primary" value="Next" href="#">&nbsp;<i class="fa fa-print"
+                aria-hidden="true"></i> &nbsp; Print Report</a>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-xs-12 js-content header_wrap">
+            <div class="num_rows">
+
+              <div class="form-group">
+                <!--		Show Numbers Of Rows 		-->
+                <select class="page-control" name="state" id="maxRows">
+                  <option value="Default">Default</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
+                  <option value="70">70</option>
+                  <option value="100">100</option>
+                  <option value="5000">Show ALL Rows</option>
+                </select>
+                <div>Recods per page</div>
+              </div>
+
+            </div>
+
+            <div class="docs-table">
+              <table data-toggle="table" id="table-id" data-show-toggle="true" data-show-columns="true"
+                data-search="true" data-striped="true">
+                <thead>
+                  <tr>
+
+                    <!-- <th data-field="Name">Branch Number</th> -->
+                    <th data-field="Description">Admin Name</th>
+                    <th data-field="Tags">Nick Name</th>
+                    <th data-field="Text">Finance Name</th>
+                    <th data-field="Password">Password</th>
+                    <th data-field="finnum">Finance Number</th>
+                    <th data-field="admemail">Email-Id</th>
+                    <th data-field="Allc-amt">Allocated Amount</th>
+                    <!-- <th data-field="avl-amt">Available Amount</th> -->
+                    <th data-field="image">Logo</th>
+                    <th data-field="icon">Actions</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                    <tr *ngFor="let admin of admin">
+                        <td>{{ admin.adminName }}</td>
+                        <td>{{ admin.adminNickName }}</td>
+                        <td>{{ admin.financeName }}</td>
+                        <td>{{ admin.password }}</td>
+                        <td>{{ admin.finNumber }}</td>
+                        <td>{{ admin.email }}</td>
+                    <td><i class="fa fa-inr" aria-hidden="true"></i>{{ admin.allocatedAccount }}</td>
+                    <td><img src="image/logo.jpg" alt="Logo" style="width: 20px;"></td>
+                    <td>
+                      <!-- <a value="update" style="color: #363636;"><i class="fa fa-file-text-o"
+                          aria-hidden="true"></i> </a> -->
+                      <a value="update" style="color:#0936A2 ;"><i class="fa fa-pencil-square-o"
+                          aria-hidden="true"></i> </a>
+                      <a value="update" style="color: #a20909;" (click)="deleteAdmin(admin.id)"><i class="fa fa-trash-o"
+                          aria-hidden="true"></i> </a>
+                    </td>
+                  </tr>
+
+                  <!-- <tr>
+                    <td>1002</td>
+                    <td>Vignesh.SS</td>
+                    <td>Viki</td>
+                    <td>Ragavendra Finance</td>
+                    <td>Raga123</td>
+                    <td>9876543210</td>
+                    <td>vignesh@gmail.com</td>
+                    <td><i class="fa fa-inr" aria-hidden="true"></i>40,000</td>
+                    <td><i class="fa fa-inr" aria-hidden="true"></i>20,000</td>
+                    <td><img src="image/logo.jpg" alt="Logo" style="width: 20px;"></td>
+                    <td>
+                      <a value="update" style="color: #363636;" href="#"><i class="fa fa-file-text-o"
+                          aria-hidden="true"></i> </a>
+                      <a value="update" style="color:#0936A2 ;" href="#"><i class="fa fa-pencil-square-o"
+                          aria-hidden="true"></i> </a>
+                      <a value="update" style="color: #a20909;" href="#"><i class="fa fa-trash-o"
+                          aria-hidden="true"></i> </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>1003</td>
+                    <td>Vignesh.SS</td>
+                    <td>Viki</td>
+                    <td>Ragavendra Finance</td>
+                    <td>Raga123</td>
+                    <td>9876543210</td>
+                    <td>vignesh@gmail.com</td>
+                    <td><i class="fa fa-inr" aria-hidden="true"></i>40,000</td>
+                    <td><i class="fa fa-inr" aria-hidden="true"></i>20,000</td>
+                    <td><img src="image/logo.jpg" alt="Logo" style="width: 20px;"></td>
+                    <td>
+                      <a value="update" style="color: #363636;" href="#"><i class="fa fa-file-text-o"
+                          aria-hidden="true"></i> </a>
+                      <a value="update" style="color:#0936A2 ;" href="#"><i class="fa fa-pencil-square-o"
+                          aria-hidden="true"></i> </a>
+                      <a value="update" style="color: #a20909;" href="#"><i class="fa fa-trash-o"
+                          aria-hidden="true"></i> </a>
+                    </td>
+                  </tr> -->
+                  
+                  <!--Total Amount-->
+                </tbody>
+              </table>
+
+            </div>
+            <!--		Start Pagination -->
+            <!-- <div class='pagination-container'>
+              <nav>
+                <ul class="pagination">
+                  	Here the JS Function Will Add the Rows
+                </ul>
+              </nav>
+            </div> -->
+
+            <div class=" rows_count">
+              Showing 11 to 20 of 91 entries
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 col-sm-12 co-md-12 col-lg-12 col-xl-12 ">
+          <div class="loan-summary row" style="margin: 0 auto;width: 90%;padding-left: 2%;bottom: 0em;position: relative;">
+
+            <div class="col-md-12 col-lg-4"></div>
+
+            <div class="col-md-12 col-lg-4">
+              <a class="total-amt" value="Next" href="#" title="Allocated Loan Amount. 
+              This calculates what you have Invested amount
+              in particular Finance.">
+                Alloc. Loan Amt
+              </a>
+              <span class="total-calc">
+                &nbsp; &nbsp; 
+              <i class="fa fa-inr pd-rt" aria-hidden="true"></i> 1,20,000
+              </span>
+            </div>
+
+            <div class="col-md-12 col-lg-4">
+              <a class="total-amt" value="Next" href="#" title="Availlable Loan Amount. 
+              This calculates what you have available amount
+              in particular Finance.">
+                Avail. Loan Amt
+              </a>
+              <span class="total-calc">
+                &nbsp; &nbsp; 
+              <i class="fa fa-inr pd-rt" aria-hidden="true"></i> 40,000
+              </span>
+            </div>
+
+        </div>
+
+
+        
+      </div>
+          
+          
+        
+      </div>
+      
+    </div>
+    
+    <section class="trade-mark">
+      <p class="text-center trade-s"> Powered by
+        <span style="font-size: 11pt;"> Dreamwell Technologies</span>
+      </p>
+    </section>
+
+
+  </div>

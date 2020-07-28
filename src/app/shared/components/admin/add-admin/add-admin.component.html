@@ -1,0 +1,271 @@
+<div id='wrapper'>
+    <!--  -->
+    <div id='page-wrapper'>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-5 text-center p-0 mt-3 mb-2"></div>
+                <div class="col-8 col-sm-10 col-md-10 col-lg-8 col-xl-5 text-center p-0 mt-3 mb-2">
+                    <div class="container-fluid">
+                        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                            <h4 id="heading">Admin Registeration</h4>
+                            <form [formGroup]="adminForm" id="msform">
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-lg-9">
+                                                <h4 class="fs-title">ADD Admin Details</h4>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row border">
+                                            <div class="form-group">
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Enter E-mail ID: *</label>
+                                                    <input formControlName="email" [(ngModel)]="admin.email"
+                                                        type="email" id="adminname" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('email').invalid && (adminForm.get('email').dirty || adminForm.get('email').touched)">
+                                                        <span *ngIf="adminForm.get('email').errors.required">E-mail ID
+                                                            is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Finance ID: *</label>
+                                                    <input formControlName="financeId" [(ngModel)]="admin.financeId"
+                                                        type="number" id="adminname" class="form-control"
+                                                        placeholder="1011">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('financeId').invalid && (adminForm.get('financeId').dirty || adminForm.get('financeId').touched)">
+                                                        <span *ngIf="adminForm.get('financeId').errors.required">Finance
+                                                            ID is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Password: *</label>
+                                                    <input formControlName="password" [(ngModel)]="admin.password"
+                                                        type="password" id="password" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('password').invalid && (adminForm.get('password').dirty || adminForm.get('password').touched)">
+                                                        <span *ngIf="adminForm.get('password').errors.required">Password
+                                                            is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Confirm Password: *</label>
+                                                    <input type="password" id="cpassword" class="form-control">
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Finance Name: *</label>
+                                                    <input formControlName="financeName" [(ngModel)]="admin.financeName"
+                                                        type="text" id="fin-name" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('financeName').invalid && (adminForm.get('financeName').dirty || adminForm.get('financeName').touched)">
+                                                        <span
+                                                            *ngIf="adminForm.get('financeName').errors.required">Finance
+                                                            Name is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels"
+                                                        title="This Finance Number will come overall process">Fin
+                                                        Number:
+                                                        *</label>
+                                                    <input formControlName="finNumber" [(ngModel)]="admin.finNumber"
+                                                        type="number" id="fin-number" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('finNumber').invalid && (adminForm.get('finNumber').dirty || adminForm.get('finNumber').touched)">
+                                                        <span *ngIf="adminForm.get('finNumber').errors.required">Fin
+                                                            Number is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Admin Name: *</label>
+                                                    <input formControlName="adminName" [(ngModel)]="admin.adminName"
+                                                        type="text" id="fin-adm-name" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('adminName').invalid && (adminForm.get('adminName').dirty || adminForm.get('adminName').touched)">
+                                                        <span *ngIf="adminForm.get('adminName').errors.required">Admin
+                                                            Name is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Admin Nick Name: *</label>
+                                                    <input formControlName="adminNickName"
+                                                        [(ngModel)]="admin.adminNickName" type="text" id="fin-adm-name"
+                                                        class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('adminNickName').invalid && (adminForm.get('adminNickName').dirty || adminForm.get('adminNickName').touched)">
+                                                        <span
+                                                            *ngIf="adminForm.get('adminNickName').errors.required">Admin
+                                                            Nick Name is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Allocated Amount: *</label>
+                                                    <input formControlName="allocatedAccount"
+                                                        [(ngModel)]="admin.allocatedAccount" type="number"
+                                                        id="fin-alloct-amt" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('allocatedAccount').invalid && (adminForm.get('allocatedAccount').dirty || adminForm.get('allocatedAccount').touched)">
+                                                        <span
+                                                            *ngIf="adminForm.get('allocatedAccount').errors.required">Allocated
+                                                            Amount is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-6 box-align">
+                                                    <label class="fieldlabels">Finance Logo: </label>
+                                                    <input id="imageUpload" class="form-control" type="file"
+                                                        name="profile_photo" required="" capture>
+                                                </div>
+
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 fieldlabels box-align">
+                                                    <h4 class="fieldlabels head2">Address Details:</h4>
+                                                </div>
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels">State: *</label>
+                                                    <div class="sbx" id="yoe_fld">
+                                                        <select id="sel_val" class="styled align form-control">
+                                                            <option>- - - - - -</option>
+                                                            <option>Tamil Nadu</option>
+                                                            <option>Puducherry</option>
+                                                            <option>Telangana</option>
+                                                            <option>Karnataka</option>
+                                                            <option>Kerala</option>
+                                                            <option>Andhra Pradesh</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels">District: *</label>
+                                                    <div class="sbx" id="yoe_fld">
+                                                        <select id="sel_val" class="styled align form-control">
+                                                            <option>- - - - - -</option>
+                                                            <option>Erode</option>
+                                                            <option>Coimbatore</option>
+                                                            <option>Salem</option>
+                                                            <option>Namakkal</option>
+                                                            <option>Tanjavur</option>
+                                                            <option>Chennai</option>
+                                                            <option>Madurai</option>
+                                                            <option>Tiruchirappally</option>
+                                                            <option>Dindigul</option>
+                                                            <option>Nagapattinam</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels">Village/Town: </label>
+                                                    <input formControlName="village" [(ngModel)]="admin.village"
+                                                        type="text" id="street-name" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('village').invalid && (adminForm.get('village').dirty || adminForm.get('village').touched)">
+                                                        <span *ngIf="adminForm.get('village').errors.required">Village
+                                                            is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels">Street Name: *</label>
+                                                    <input formControlName="streetName" [(ngModel)]="admin.streetName"
+                                                        type="text" id="street-name" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('streetName').invalid && (adminForm.get('streetName').dirty || adminForm.get('streetName').touched)">
+                                                        <span *ngIf="adminForm.get('streetName').errors.required">Street
+                                                            Name is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels">Landmark: *</label>
+                                                    <input formControlName="landmark" [(ngModel)]="admin.landmark"
+                                                        type="text" id="landmark" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('landmark').invalid && (adminForm.get('landmark').dirty || adminForm.get('landmark').touched)">
+                                                        <span *ngIf="adminForm.get('landmark').errors.required">Landmark
+                                                            is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+
+                                                <div
+                                                    class="col-6 col-sm-12 col-md-6 col-lg-4 col-xl-6 fieldlabels box-align">
+                                                    <label class="fieldlabels">Pin Code: *</label>
+                                                    <input formControlName="pincode" [(ngModel)]="admin.pincode"
+                                                        type="number" id="pin-number" class="form-control">
+                                                    <span style="color:red"
+                                                        *ngIf="adminForm.get('pincode').invalid && (adminForm.get('pincode').dirty || adminForm.get('pincode').touched)">
+                                                        <span *ngIf="adminForm.get('pincode').errors.required">Pincode
+                                                            is
+                                                            required.</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <a (click)="createAdmin(admin)" class="next action-button validate-OTP btn-primary">
+                                        Submit &nbsp;
+                                        <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                                        <div class="justify-content-center">
+                                            <div class="col-2 col-sm-12 col-md-2 col-lg-3 col-xl-3"></div>
+                                            <div class="col-8 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                                                <img style="width: 30%; margin: 0 auto; display: block;"
+                                                    src="image/tick-mark.png" class="fit-image">
+                                                <h4 class="purple-text text-center">Admin Account Successfully Created
+                                                </h4>
+                                                <div class="col-md-2 col-lg-12 col-xl-12"></div>
+
+                                                <div class="col-2 col-sm-12 col-md-2 col-lg-3 col-xl-3"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <section class="trade-mark">
+        <p class="text-center trade-s"> Powered by
+            <span style="font-size: 11pt;"> Dreamwell Technologies</span>
+        </p>
+    </section>
+</div>

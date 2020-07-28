@@ -1,0 +1,160 @@
+<div id='page-wrapper'>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2>View Employee's</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12 js-content header_wrap">
+                <div class="num_rows">
+
+                    <div class="form-group">
+                        <!--		Show Numbers Of Rows 		-->
+                        <select class="page-control" name="state" id="maxRows">
+                            <option value="Default">Default</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="70">70</option>
+                            <option value="100">100</option>
+                            <option value="5000">Show ALL Rows</option>
+                        </select>
+                        <div>Recods per page</div>
+                    </div>
+
+                </div>
+
+                <div class="docs-table">
+                    <table data-toggle="table" id="table-id" data-show-toggle="true" data-show-columns="true"
+                        data-search="true" data-striped="true">
+                        <thead>
+                            <tr>
+
+                                <th data-field="Name">Finance Code</th>
+                                <th data-field="Description">Finance Name</th>
+                                <th data-field="Emp.Name">Emp. Name</th>
+                                <th data-field="Emp-nickname">Nick Name</th>
+                                <th data-field="Emp-dob">DOB</th>
+                                <th data-field="age">Age</th>
+                                <th data-field="emp-sal">Emp Salary</th>
+                                <th data-field="admemail">Email Id</th>
+                                <th data-field="Password">Password</th>
+                                <th data-field="finnum">Mobile Number</th>
+                                <th data-field="DOJ">Joining Date</th>
+                                <th data-field="icon">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let employee of employees">
+                                <td>{{ employee.financeCode }}</td>
+                                <td>{{ employee.finance }}</td>
+                                <td>{{ employee.empName }}</td>
+                                <td>{{ employee.empNickName }}</td>
+                                <td>{{ employee.empDob }}</td>
+                                <td>{{ employee.age }}</td>
+                                <td>{{ employee.basicSalary }}</td>
+                                <td>{{ employee.regEmailAddress }}</td>
+                                <td>{{ employee.password }}</td>
+                                <td>{{ employee.mobileNumber }}</td>
+                                <td>{{ employee.dateOfJoining }}</td>
+                                <td>
+                                    <a value="update" style="color: #a20909;" (click)="deleteEmployee(employee.id)"><i
+                                            class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                                </td>
+                            </tr>
+
+                            <!-- <tr>
+                                <td>1001</td>
+                                <td>Ragavendra Finance</td>
+                                <td>Ramesh</td>
+                                <td>Ram</td>
+                                <td>19-02-1997</td>
+                                <td>24</td>
+                                <td>7000</td>
+                                <td>vignesh@gmail.com</td>
+                                <td>Vignav123</td>
+                                <td>9876543210</td>
+                                <td>19-5-2015</td>
+                                <td>
+                                    <a value="update" style="color: #a20909;" href="#"><i class="fa fa-trash-o"
+                                            aria-hidden="true"></i> </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>1002</td>
+                                <td>Rudra Finance</td>
+                                <td>Raji</td>
+                                <td>Raji</td>
+                                <td>19-02-1997</td>
+                                <td>25</td>
+                                <td>6500</td>
+                                <td>vignesh@gmail.com</td>
+                                <td>Vignav123</td>
+                                <td>9876543210</td>
+                                <td>19-5-2015</td>
+                                <td>
+                                    <a value="update" style="color: #a20909;" href="#"><i class="fa fa-trash-o"
+                                            aria-hidden="true"></i> </a>
+                                </td>
+                            </tr> -->
+                            <!--Total Amount-->
+                        </tbody>
+                    </table>
+                </div>
+                <!--		Start Pagination -->
+                <!-- <div class='pagination-container'>
+                    <nav>
+                        <ul class="pagination">
+                            	Here the JS Function Will Add the Rows
+                        </ul>
+                    </nav>
+                </div> -->
+                <div class=" rows_count">Showing 11 to 20 of 91 entries</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-sm-12 co-md-12 col-lg-12 col-xl-12 ">
+            <div class="loan-summary row"
+                style="margin: 0 auto;width: 90%;padding-left: 2%;bottom: 0em;position: relative;">
+
+                <div class="col-md-12 col-lg-4"></div>
+
+                <div class="col-md-12 col-lg-4"></div>
+
+                <div class="col-md-12 col-lg-4">
+                    <a class="total-amt" value="Next" href="#" title="Total Employee Salary. 
+          This calculates what you have given 
+          Salary in that particular Finance.">
+                        Tot. Emp Salary
+                    </a>
+                    <span class="total-calc">
+                        &nbsp;
+                        <i class="fa fa-inr pd-rt" aria-hidden="true"></i> 40,000
+                        &nbsp;
+                    </span>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+<section class="trade-mark">
+    <p class="text-center trade-s"> Powered by
+        <span style="font-size: 11pt;"> Dreamwell Technologies</span>
+    </p>
+</section>

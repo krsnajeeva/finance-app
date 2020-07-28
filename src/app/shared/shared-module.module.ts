@@ -7,6 +7,12 @@ import { AppRepledgeLoanSummary } from './components/Repledge/repledge-loan-summ
 import { AppReadyAuctionSummaryComponent } from './components/Ready to auction/ready-to-auction-summary/ready-to-auction-summary.component';
 import { AppAllLoanReportsComponent } from './components/all-loan-reports/all-loan-reports.component';
 import { AppAddInfoComponent } from './components/add-info/add-info.component';
+import { AddAdminComponent } from './components/admin/add-admin/add-admin.component';
+import { ViewAdminComponent } from './components/admin/view-admin/view-admin.component';
+import { AddEmployeeComponent } from './components/employee/add-employee/add-employee.component';
+import { ViewEmployeeComponent } from './components/employee/view-employee/view-employee.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -17,9 +23,17 @@ import { AppAddInfoComponent } from './components/add-info/add-info.component';
         AppRepledgeLoanSummary,
         AppReadyAuctionSummaryComponent,
         AppAllLoanReportsComponent,
-        AppAddInfoComponent
+        AppAddInfoComponent,
+        AddAdminComponent,
+        ViewAdminComponent,
+        AddEmployeeComponent,
+        ViewEmployeeComponent
     ],
-    imports: [],
+    imports: [
+        FormsModule,
+        CommonModule,
+        ReactiveFormsModule
+    ],
     exports: []
 })
 

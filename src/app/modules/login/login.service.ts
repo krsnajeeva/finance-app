@@ -20,8 +20,16 @@ export class LoginService {
     return this.firestore.collection(constants.collections.super_admin).snapshotChanges();
   }
 
+  getEmployee() {
+    return this.firestore.collection(constants.collections.employee).snapshotChanges();
+  }
+  
   registerUser(user) {
     return this.firestore.collection(constants.collections.super_admin).add(user);
+  }
+
+  registerEmployee(employee) {
+    return this.firestore.collection(constants.collections.employee).add(employee);
   }
 
   updateUser(user: User) {
@@ -34,6 +42,9 @@ export class LoginService {
     this.firestore.doc(`${constants.collections.super_admin}/${userId}`).delete();
   }
 
+  deleteEmployee(employeeId: string) {
+    this.firestore.doc(`${constants.collections.employee}/${employeeId}`).delete();
+  }
 
   SendVerificationMail() {
     return this.afAuth.auth.currentUser.sendEmailVerification()
@@ -56,7 +67,7 @@ export class LoginService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         if (result.user.emailVerified !== true) {
-          window.alert('Please validate your email address.');
+          // window.alert('Please validate your email address.');
           // return false;
         } else {
           this.ngZone.run(() => {

@@ -13,7 +13,7 @@ const routes: Routes = [
     {
         path: '', component: AppLandingLayoutComponent,
         children: [
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'account', component: AccountSettingComponent },
             { path: 'dashboard', component: AppDashboardComponent },
             { path: 'home', component: AppHomeComponent },

@@ -51,7 +51,7 @@
                         <label class="fieldlabels">DOB: *</label>
                         <input formControlName="dob" [(ngModel)]="superAdmin.dob" type="date" id="super-admin-DOB"
                           class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('dob').invalid && (superAdminForm.get('dob').dirty || superAdminForm.get('dob').touched)">
                           <span *ngIf="superAdminForm.get('dob').errors.required">DOB is
                             required.</span>
@@ -61,7 +61,7 @@
                         <label class="fieldlabels">Age: *</label>
                         <input formControlName="age" [(ngModel)]="superAdmin.age" type="number" id="super-admin-age"
                           class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('age').invalid && (superAdminForm.get('age').dirty || superAdminForm.get('age').touched)">
                           <span *ngIf="superAdminForm.get('age').errors.required">Age is
                             required.</span>
@@ -77,10 +77,13 @@
                         <label class="fieldlabels">Phone Number: *</label>
                         <input formControlName="phoneNumber" [(ngModel)]="superAdmin.phoneNumber" type="email"
                           id="per-email" class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('phoneNumber').invalid && (superAdminForm.get('phoneNumber').dirty || superAdminForm.get('phoneNumber').touched)">
                           <span *ngIf="superAdminForm.get('phoneNumber').errors.required">Phone Number is
                             required.</span>
+                            <span
+                            *ngIf="superAdminForm.get('phoneNumber').errors.pattern">Enter Valid Mobile Number
+                        </span>
                         </span>
                       </div>
 
@@ -93,18 +96,21 @@
                         <label class="fieldlabels">Enter your Mail ID: *</label>
                         <input formControlName="email" [(ngModel)]="superAdmin.email" type="email" id="per-email"
                           class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('email').invalid && (superAdminForm.get('email').dirty || superAdminForm.get('email').touched)">
                           <span *ngIf="superAdminForm.get('email').errors.required">EmailId is
                             required.</span>
+                          <span *ngIf="superAdminForm.get('email').errors.pattern">Enter a valid E-mail ID
+                          </span>
                         </span>
+
                       </div>
 
                       <div class="col-sm-3 box-align">
                         <label class="fieldlabels">Password: *</label>
                         <input formControlName="password" [(ngModel)]="superAdmin.password" type="password"
                           id="password" class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('password').invalid && (superAdminForm.get('password').dirty || superAdminForm.get('password').touched)">
                           <span *ngIf="superAdminForm.get('password').errors.required">Password is
                             required.</span>
@@ -113,7 +119,16 @@
 
                       <div class="col-sm-3 box-align">
                         <label class="fieldlabels">Confirm Password: *</label>
-                        <input type="password" id="cpassword" class="form-control">
+                        <input formControlName="confirmPassword" type="password" id="cpassword" class="form-control">
+                        <span style="color:red"
+                          *ngIf="superAdminForm.get('confirmPassword').invalid && (superAdminForm.get('confirmPassword').dirty || superAdminForm.get('confirmPassword').touched)">
+                          <span *ngIf="superAdminForm.get('confirmPassword').errors.required">Confirm Password is
+                            required.
+                          </span>
+                          <span *ngIf="superAdminForm.get('confirmPassword').errors.ConfirmPasswordValidator">
+                            Passsword and Confirm Password didn't match.
+                          </span>
+                        </span>
                       </div>
                     </div>
 
@@ -146,7 +161,7 @@
                         <label class="fieldlabels">Finance Name: *</label>
                         <input formControlName="financeName" [(ngModel)]="superAdmin.financeName" type="email"
                           id="super-admin-name" class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('financeName').invalid && (superAdminForm.get('financeName').dirty || superAdminForm.get('financeName').touched)">
                           <span *ngIf="superAdminForm.get('financeName').errors.required">Finance Name is
                             required.</span>
@@ -157,7 +172,7 @@
                         <label class="fieldlabels">Finance Start Date: *</label>
                         <input formControlName="financeStartDate" [(ngModel)]="superAdmin.financeStartDate" type="date"
                           id="super-admin-DOB" class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('financeStartDate').invalid && (superAdminForm.get('financeStartDate').dirty || superAdminForm.get('financeStartDate').touched)">
                           <span *ngIf="superAdminForm.get('financeStartDate').errors.required">Finance Start Date is
                             required.</span>
@@ -168,7 +183,7 @@
                         <label class="fieldlabels">No. of Finance: *</label>
                         <input formControlName="NoOfFinance" [(ngModel)]="superAdmin.NoOfFinance" type="number"
                           id="number-of-finance" class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('NoOfFinance').invalid && (superAdminForm.get('NoOfFinance').dirty || superAdminForm.get('NoOfFinance').touched)">
                           <span *ngIf="superAdminForm.get('NoOfFinance').errors.required">No of Finance is
                             required.</span>
@@ -185,7 +200,7 @@
                         <label class="fieldlabels">Finance Number: *</label>
                         <input formControlName="financeNumber" [(ngModel)]="superAdmin.financeNumber" type="email"
                           id="per-email" class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('financeNumber').invalid && (superAdminForm.get('financeNumber').dirty || superAdminForm.get('financeNumber').touched)">
                           <span *ngIf="superAdminForm.get('financeNumber').errors.required">No of Finance is
                             required.</span>
@@ -222,7 +237,8 @@
                       <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
                         <label class="fieldlabels">State: *</label>
                         <div class="sbx" id="yoe_fld">
-                          <select id="sel_val" class="styled align form-control" required>
+                          <select formControlName="state" [(ngModel)]="superAdmin.state" id="sel_val"
+                            class="styled align form-control" required>
                             <option>- - - - - -</option>
                             <option>Tamil Nadu</option>
                             <option>Puducherry</option>
@@ -231,12 +247,19 @@
                             <option>Kerala</option>
                             <option>Andhra Pradesh</option>
                           </select>
+                          <span style="color:red"
+                            *ngIf="superAdminForm.get('state').invalid && (superAdminForm.get('state').dirty || superAdminForm.get('state').touched)">
+                            <span *ngIf="superAdminForm.get('state').errors.required">State is
+                              required.
+                            </span>
+                          </span>
                         </div>
                       </div>
                       <div class="col-4 col-sm-12 col-md-6 col-lg-4 col-xl-4 fieldlabels box-align">
                         <label class="fieldlabels">District: *</label>
                         <div class="sbx" id="yoe_fld">
-                          <select id="sel_val" class="styled align form-control" required>
+                          <select formControlName="district" [(ngModel)]="superAdmin.district" id="sel_val"
+                            class="styled align form-control" required>
                             <option>- - - - - -</option>
                             <option>Erode</option>
                             <option>Coimbatore</option>
@@ -249,13 +272,19 @@
                             <option>Dindigul</option>
                             <option>Nagapattinam</option>
                           </select>
+                          <span style="color:red"
+                            *ngIf="superAdminForm.get('district').invalid && (superAdminForm.get('district').dirty || superAdminForm.get('district').touched)">
+                            <span *ngIf="superAdminForm.get('district').errors.required">District is
+                              required.
+                            </span>
+                          </span>
                         </div>
                       </div>
                       <div class="col-sm-4 box-align">
                         <label class="fieldlabels">Street Name: *</label>
                         <input formControlName="streetName" [(ngModel)]="superAdmin.streetName" type="text"
                           id="Landmark" class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('streetName').invalid && (superAdminForm.get('streetName').dirty || superAdminForm.get('streetName').touched)">
                           <span *ngIf="superAdminForm.get('streetName').errors.required">No of Finance is
                             required.</span>
@@ -265,7 +294,7 @@
                         <label class="fieldlabels">Landmark: *</label>
                         <input formControlName="landmark" [(ngModel)]="superAdmin.landmark" type="text" id="Landmark"
                           class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('landmark').invalid && (superAdminForm.get('landmark').dirty || superAdminForm.get('landmark').touched)">
                           <span *ngIf="superAdminForm.get('landmark').errors.required">No of Finance is
                             required.</span>
@@ -275,7 +304,7 @@
                         <label class="fieldlabels">Pincode: *</label>
                         <input formControlName="pincode" [(ngModel)]="superAdmin.pincode" type="number" id="pincode"
                           class="form-control">
-                          <span style="color:red"
+                        <span style="color:red"
                           *ngIf="superAdminForm.get('pincode').invalid && (superAdminForm.get('pincode').dirty || superAdminForm.get('pincode').touched)">
                           <span *ngIf="superAdminForm.get('pincode').errors.required">No of Finance is
                             required.</span>
